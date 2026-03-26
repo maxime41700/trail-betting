@@ -17,6 +17,22 @@ from src.components.session_state import initialize_session_state
 from src.components.navigation import set_navigation
 from src.functions.utils import extraire_bloc_style, get_image_base64
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()  # ne fait rien sur Streamlit Cloud, utile en local
+
+def get_secret(key):
+    try:
+        return st.secrets[key]
+    except (KeyError, FileNotFoundError):
+        return os.getenv(key)
+
+SUPABASE_URL        = get_secret("SUPABASE_URL")
+SUPABASE_ANON_KEY   = get_secret("SUPABASE_ANON_KEY")
+SUPABASE_SERVICE_KEY= get_secret("SUPABASE_SERVICE_KEY")
+DATABASE_URL        = get_secret("DATABASE_URL")
+
 
 # CONFIGURATION GLOBALE
 # ---------------------------------------------------------------------------
