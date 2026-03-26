@@ -1,0 +1,20 @@
+# =============================================================================
+# Liste des fichiers et dossiers exclus du suivi Git.
+# Objectif : ne jamais versionner de secrets, de fichiers temporaires ou d'artefacts de build qui n'ont rien à faire dans le repo.
+# =============================================================================
+
+# Cache bytecode généré automatiquement par l'interpréteur Python
+__pycache__/
+
+# Environnement virtuel
+.venv/
+
+# Secrets en prod locale
+.streamlit/secrets.toml
+
+# Configuration locale
+.env
+
+# Fichiers de configuration Supabase générés localement
+supabase/.branches
+supabase/.temp

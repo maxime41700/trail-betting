@@ -1,0 +1,60 @@
+# PAGE_CONFIG
+# Configuration de la page, à modifier en fonction (titre et logo dans la barre du navigateur).
+
+PAGE_CONFIG : 
+  page_title : "Trail Betting"
+  page_icon : "src/assets/images/duc_army_logo.png"
+  page_layout : "wide"
+
+# PAGES
+# Définition des différentes pages de l'application. Informations à donner pour rajouter une page :
+# - le titre de la page (ex : "Accueil")
+# - la section du sommaire à laquelle elle doit appartenir (normalement "Menu")
+# - le fichier/la fonction source à partir duquel/de laquelle charger la page (soit donner le chemin relatif vers le fichier, soit le chemin relatif vers la fonction, ex : "src/pages/accueil.py")
+# - l'icône de la page dans le sommaire (base d'icônes : https://fonts.google.com/icons, donner au format ":material/icone:")
+# - le rôle requis pour accéder à la page (optionnel) :
+#     * absent ou null  → accessible par tous
+#     * "admin"         → visible uniquement pour les administrateurs
+
+PAGES :
+
+  Accueil :
+    section : "Menu"
+    source_file : "src.pages.accueil.main"
+    page_title : "Accueil"
+    page_icon : ":material/home:"
+    role_requis : null
+
+  Courses :
+    section : "Menu"
+    source_file : "src.pages.courses.main"
+    page_title : "Courses"
+    page_icon : ":material/edit_calendar:"
+    role_requis : null
+
+  Classement :
+    section : "Menu"
+    source_file : "src.pages.classement.main"
+    page_title : "Classement"
+    page_icon : ":material/crown:"
+    role_requis : null
+
+  Saisie :
+    section : "Administration"
+    source_file : "src.pages.saisie.main"
+    page_title : "Saisie"
+    page_icon : ":material/database:"
+    role_requis : "admin"
+
+  Mon compte :
+    section : "Compte"
+    source_file : "src.pages.login.main"
+    page_title : "Mon compte"
+    page_icon : ":material/account_circle:"
+    role_requis : null
+
+# LOGO_SIDEBAR
+# Logo à insérer dans la sidebar de l'application et pouvant contenir un lien.
+
+LOGO_SIDEBAR : "src/assets/images/duc_army_logo.png"
+LOGO_LINK : "https://www.duc-army.fr"
